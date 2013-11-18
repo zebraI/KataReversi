@@ -15,7 +15,11 @@ public class TestReversi {
 			this.reversi = new Reversi();
 		}
 		
-		@Test
+		public void testEgalite(String input, String output){
+			assertEquals(output,reversi.printLegalMoves(input));
+		}
+		
+		/*@Test
 		public void grilleAuCommencementBParLigne(){
 			input = ""+
 					"........\n"
@@ -39,12 +43,12 @@ public class TestReversi {
 					+ "........\n"
 					+ "B";
 			
-			assertEquals(output,reversi.printLegalMoves(input));
+			testEgalite(input,output);
 		}
 		
 		@Test
 		public void grilleAuCommencementWParLigne(){
-			String input = ""+
+			input = ""+
 					"........\n"
 					+ "........\n"
 					+ "........\n"
@@ -55,7 +59,7 @@ public class TestReversi {
 					+ "........\n"
 					+ "W";
 			
-			String output = ""+
+			output = ""+
 					"........\n"
 					+ "........\n"
 					+ "........\n"
@@ -66,7 +70,14 @@ public class TestReversi {
 					+ "........\n"
 					+ "W";
 			
-			assertEquals(output,reversi.printLegalMoves(input));
+			testEgalite(input,output);
+		}*/
+		
+		@Test
+		public void testLigneJoueurBRetournePositions(){
+			input = "...BW...\n"+"B";
+			output = "...BW0..\n"+"B";
+			
+			testEgalite(input,output);
 		}
-
 }

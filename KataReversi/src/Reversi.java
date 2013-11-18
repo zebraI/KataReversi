@@ -3,7 +3,8 @@ public class Reversi {
 
 	public String printLegalMoves(String input) {
 		
-		if (this.turnIsAt(input).equals("B")) {
+
+		/*if (this.turnIsAt(input).equals("B")) {
 			return (""
 					+"........\n"
 					+ "........\n"
@@ -25,7 +26,25 @@ public class Reversi {
 					+ "........\n"
 					+ "........\n"
 					+ "........\n"
-					+ "W");		
+					+ "W");	*/	
+		String[] tableau = input.split("\n");
+		String output= "";
+		for (int i = 0; i < tableau.length; i++) {
+	    	if(tableau[i].indexOf("B")<tableau[i].indexOf("W.") && tableau[i].indexOf("B")!=-1){
+	    		tableau[i] = tableau[i].replace("W.","W0");
+	    	}
+	    	if(tableau[i].indexOf("B")>tableau[i].indexOf(".W") && tableau[i].indexOf("B")!=-1){
+	    		tableau[i] = tableau[i].replace(".W","0W");
+	    	}
+	    	//System.out.println(tableau[i]);
+	    	if (i==1){
+	    		output = output + tableau[i];
+	    	}
+	    	else
+	    		output = output + tableau[i] + "\n";
+		}
+		System.out.println(output);
+		return output;
 	}
 	
 	/*-----------------------Savoir si le dernier carctère est B ou W-----------------------------*/
