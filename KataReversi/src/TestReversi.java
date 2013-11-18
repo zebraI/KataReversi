@@ -74,9 +74,33 @@ public class TestReversi {
 		}*/
 		
 		@Test
-		public void testLigneJoueurBRetournePositions(){
+		public void testLigneJoueurBWRetournePositions(){
 			input = "...BW...\n"+"B";
 			output = "...BW0..\n"+"B";
+			
+			testEgalite(input,output);
+		}
+		
+		@Test
+		public void testLigneJoueurBWWRetournePositions(){
+			input = "...BWW..\n"+"B";
+			output = "...BWW0.\n"+"B";
+			
+			testEgalite(input,output);
+		}
+		
+		@Test
+		public void testLigneJoueurWBRetournePositions(){
+			input = "...WB...\n"+"B";
+			output = "..0WB...\n"+"B";
+			
+			testEgalite(input,output);
+		}
+		
+		@Test
+		public void testLigneJoueurWWBRetournePositions(){
+			input = "...WWB..\n"+"B";
+			output = "..0WWB..\n"+"B";
 			
 			testEgalite(input,output);
 		}
