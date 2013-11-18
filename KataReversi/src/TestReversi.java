@@ -173,7 +173,7 @@ public class TestReversi {
 		}
 
 		
-		//---------------------Test un tableau Joueur B---------------
+		//---------------------Test un tableau Joueur B pour les lignes---------------
 		@Test
 		public void testTableauEntierJB(){
 			input = ""+
@@ -203,7 +203,7 @@ public class TestReversi {
 		
 		
 		
-		//---------------------Test un tableau Joueur W---------------
+		//---------------------Test un tableau Joueur W pour les lignes---------------
 		@Test
 		public void testTableauEntierJW(){
 			input = ""+
@@ -230,6 +230,37 @@ public class TestReversi {
 
 			testEgalite(input,output);
 		}
+		
+		
+		
+		//---------------------Test transformation colonnes en lignes---------------
+		@Test
+		public void testTransformationColonnesEnLignes(){
+			input = ""+
+					"........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "...BWW..\n"
+					+ "...WB...\n"
+					+ "........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "B";
+			
+			output = ""+
+					"........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "...BW...\n"
+					+ "...WB...\n"
+					+ "...W....\n"
+					+ "........\n"
+					+ "........\n";
+					
+
+			assertEquals(output,reversi.transformationColonneLigne(input));
+		}
+		
 		
 		
 }
