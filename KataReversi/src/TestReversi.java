@@ -74,6 +74,37 @@ public class TestReversi {
 		}*/
 		
 		
+		//---------------------Tests renvoyant le tour---------------		
+		@Test
+		public void tourJoueurB(){
+			input = ""+
+					"........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "...BW...\n"
+					+ "...WB...\n"
+					+ "........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "B";
+			assertEquals("B",this.reversi.turnIsAt(input));
+		}
+		
+		@Test
+		public void tourJoueurW(){
+			input = ""+
+					"........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "...BW...\n"
+					+ "...WB...\n"
+					+ "........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "W";
+			assertEquals("W", this.reversi.turnIsAt(input));
+		}
+		
 //---------------------Tests une ligne Joueur B---------------
 		@Test
 		public void testLigneBWRetournePositionsJB(){
@@ -141,6 +172,64 @@ public class TestReversi {
 			testEgalite(input,output);
 		}
 
+		
+		//---------------------Test un tableau Joueur B---------------
+		@Test
+		public void testTableauEntierJB(){
+			input = ""+
+					"........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "...BW...\n"
+					+ "...WB...\n"
+					+ "........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "B";
+			
+			output = ""+
+					"........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "...BW0..\n"
+					+ "..0WB...\n"
+					+ "........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "B";
+
+			testEgalite(input,output);
+		}
+		
+		
+		
+		//---------------------Test un tableau Joueur W---------------
+		@Test
+		public void testTableauEntierJW(){
+			input = ""+
+					"........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "...BW...\n"
+					+ "...WB...\n"
+					+ "........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "W";
+			
+			output = ""+
+					"........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "..0BW...\n"
+					+ "...WB0..\n"
+					+ "........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "W";
+
+			testEgalite(input,output);
+		}
 		
 		
 }
