@@ -34,6 +34,7 @@ public class Reversi {
 		return input.substring(input.length()-1);
 	}
 
+	
 	/*-----------------------Transformation colonnes en lignes-----------------------------*/
 	public String transformationColonneLigne(String input) {
 		
@@ -42,15 +43,21 @@ public class Reversi {
 		String[] tableau = input.split("\n");
 		
 	    for (int j = 0; j < tableau.length - 1; j++) {
-	    	for (int i = 0; i < tableau.length - 1; i++) {
-				col = col + tableau[i].substring(j,j+1);
-			}
+	    	col = parcourirCaracteresLigneCourante(col, tableau, j);
 	    	col = col + "//";	    	
 	    }
 	    
 	    col = col.replace("//","\n");
 	    return col;
 
+	}
+
+
+	public String parcourirCaracteresLigneCourante(String col, String[] tableau, int j) {
+		for (int i = 0; i < tableau.length - 1; i++) {
+			col = col + tableau[i].substring(j, j+1);
+		}
+		return col;
 	}
 
 }
