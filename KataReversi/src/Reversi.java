@@ -2,42 +2,33 @@
 public class Reversi {
 
 	public String printLegalMoves(String input) {
-		
 
-		/*if (this.turnIsAt(input).equals("B")) {
-			return (""
-					+"........\n"
-					+ "........\n"
-					+ "........\n"
-					+ "...BW0..\n"
-					+ "..0WB...\n"
-					+ "........\n"
-					+ "........\n"
-					+ "........\n"
-					+ "B");
-		}
-		else
-			return (""+
-					"........\n"
-					+ "........\n"
-					+ "........\n"
-					+ "..0BW...\n"
-					+ "...WB0..\n"
-					+ "........\n"
-					+ "........\n"
-					+ "........\n"
-					+ "W");	*/	
+		//-------------------------Creation Tableau------------------
 		String[] tableau = input.split("\n");
+		String joueurCourant = this.turnIsAt(input);
+		//------------------------Gestion des lignes Joueur B----------------
 		String output= "";
 		for (int i = 0; i < tableau.length; i++) {
-	    	if(tableau[i].indexOf("B")<tableau[i].indexOf("W.") && tableau[i].indexOf("B")!=-1){
-	    		tableau[i] = tableau[i].replace("W.","W0");
-	    	}
-	    	if(tableau[i].indexOf("B")>tableau[i].indexOf(".W") && tableau[i].indexOf("B")!=-1){
-	    		tableau[i] = tableau[i].replace(".W","0W");
-	    	}
-	    	//System.out.println(tableau[i]);
-	    	if (i==1){
+			if(joueurCourant.equals("B")){
+				if(tableau[i].indexOf("B")<tableau[i].indexOf("W.") && tableau[i].indexOf("B")!=-1){
+		    		tableau[i] = tableau[i].replace("W.","W0");
+		    	}
+		    	if(tableau[i].indexOf("B")>tableau[i].indexOf(".W") && tableau[i].indexOf("B")!=-1){
+		    		tableau[i] = tableau[i].replace(".W","0W");
+		    	}
+			}
+			else{
+				//------------------------Gestion des lignes Joueur W----------------
+		    	
+		    	if(tableau[i].indexOf("W")<tableau[i].indexOf("B.") && tableau[i].indexOf("W")!=-1){
+		    		tableau[i] = tableau[i].replace("B.","B0");
+		    	}
+		    	if(tableau[i].indexOf("W")>tableau[i].indexOf(".B") && tableau[i].indexOf("W")!=-1){
+		    		tableau[i] = tableau[i].replace(".B","0B");
+		    	}
+			}					    	
+	    	//-------------------Gestion des sauts de lignes à la sortie-------------------------
+	    	if (i==tableau.length-1){
 	    		output = output + tableau[i];
 	    	}
 	    	else

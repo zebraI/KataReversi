@@ -73,8 +73,10 @@ public class TestReversi {
 			testEgalite(input,output);
 		}*/
 		
+		
+//---------------------Tests une ligne Joueur B---------------
 		@Test
-		public void testLigneJoueurBWRetournePositions(){
+		public void testLigneBWRetournePositionsJB(){
 			input = "...BW...\n"+"B";
 			output = "...BW0..\n"+"B";
 			
@@ -82,7 +84,7 @@ public class TestReversi {
 		}
 		
 		@Test
-		public void testLigneJoueurBWWRetournePositions(){
+		public void testLigneBWWRetournePositionsJB(){
 			input = "...BWW..\n"+"B";
 			output = "...BWW0.\n"+"B";
 			
@@ -90,7 +92,7 @@ public class TestReversi {
 		}
 		
 		@Test
-		public void testLigneJoueurWBRetournePositions(){
+		public void testLigneWBRetournePositionsJB(){
 			input = "...WB...\n"+"B";
 			output = "..0WB...\n"+"B";
 			
@@ -98,10 +100,47 @@ public class TestReversi {
 		}
 		
 		@Test
-		public void testLigneJoueurWWBRetournePositions(){
+		public void testLigneWWBRetournePositionsJB(){
 			input = "...WWB..\n"+"B";
 			output = "..0WWB..\n"+"B";
 			
 			testEgalite(input,output);
 		}
+		
+		
+		//---------------------Tests une ligne Joueur W---------------
+		@Test
+		public void testLigneBWRetournePositionsJW(){
+			input = "...BW...\n"+"W";
+			output = "..0BW...\n"+"W";
+					
+			testEgalite(input,output);
+		}
+				
+		@Test
+		public void testLigneBBWRetournePositionsJW(){
+			input = "...BBW..\n"+"W";
+			output = "..0BBW..\n"+"W";
+					
+			testEgalite(input,output);
+		}
+
+		@Test
+		public void testLigneWBRetournePositionsJW(){
+			input = "...WB...\n"+"W";
+			output = "...WB0..\n"+"W";
+
+			testEgalite(input,output);
+		}
+
+		@Test
+		public void testLigneWBBRetournePositionsJW(){
+			input = "...WBB..\n"+"W";
+			output = "...WBB0.\n"+"W";
+
+			testEgalite(input,output);
+		}
+
+		
+		
 }
