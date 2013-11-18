@@ -42,6 +42,31 @@ public class TestReversi {
 			assertEquals(output,reversi.printLegalMoves(input));
 		}
 		
-
+		@Test
+		public void grilleAuCommencementWParLigne(){
+			String input = ""+
+					"........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "...BW...\n"
+					+ "...WB...\n"
+					+ "........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "W";
+			
+			String output = ""+
+					"........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "..0BW...\n"
+					+ "...WB0..\n"
+					+ "........\n"
+					+ "........\n"
+					+ "........\n"
+					+ "W";
+			
+			assertEquals(output,reversi.printLegalMoves(input));
+		}
 
 }
