@@ -3,28 +3,30 @@ public class Reversi {
 
 	public String printLegalMoves(String input) {
 
-		//-------------------------Creation Tableau------------------
+		//-------------------------Creation Tableau et variables------------------
 		String[] tableau = input.split("\n");
 		String joueurCourant = this.turnIsAt(input);
-		//------------------------Gestion des lignes Joueur B----------------
 		String output= "";
+
+		//------------------------Gestion des lignes / Délégation à la classe Ligne ----------------
+
 		for (int i = 0; i < tableau.length; i++) {
-			Ligne ligne = new Ligne();
-		    	
+			Ligne ligne = new Ligne();    	
 			output = sortieTableau(tableau, joueurCourant, output, i, ligne);
 		}
-		System.out.println(output);
+
+		//System.out.println(output);
 		return output;
 	}
-	
-	
+
+
 	//-------------------Gestion des sauts de lignes à la sortie-------------------------
 	public String sortieTableau(String[] tableau, String joueurCourant,
 			String output, int i, Ligne ligne) {
 		if (i==tableau.length-1){
 			return output + ligne.retournePosition(joueurCourant,tableau[i]);
 		}
-			return output + ligne.retournePosition(joueurCourant,tableau[i]) + "\n";
+		return output + ligne.retournePosition(joueurCourant,tableau[i]) + "\n";
 	}
 
 	/*-----------------------Savoir si le dernier carctère est B ou W-----------------------------*/
