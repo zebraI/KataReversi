@@ -1,12 +1,16 @@
 
 public class Reversi {
-
+	
+	private String[] tableau = null;
+	private String output = null;
+	
 	public String printLegalMoves(String input) {
 
 		//-------------------------Creation Tableau et variables------------------
-		String[] tableau = input.split("\n");
+		
+		tableau = input.split("\n");
 		String joueurCourant = this.turnIsAt(input);
-		String output= "";
+		output= "";
 
 		//------------------------Gestion des lignes / Délégation à la classe Ligne ----------------
 
@@ -39,8 +43,8 @@ public class Reversi {
 	public String transformationColonneLigne(String input) {
 		
 		String col="";
-		String output="";
-		String[] tableau = input.split("\n");
+		output="";
+		tableau = input.split("\n");
 		
 	    for (int j = 0; j < tableau.length - 1; j++) {
 	    	col = parcourirCaracteresLigneCourante(col, tableau, j);
