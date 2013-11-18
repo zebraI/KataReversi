@@ -3,7 +3,7 @@ public class Reversi {
 
 	public String printLegalMoves(String input) {
 		
-		String output = ""+
+		return (""+
 				"........\n"
 				+ "........\n"
 				+ "........\n"
@@ -12,8 +12,7 @@ public class Reversi {
 				+ "........\n"
 				+ "........\n"
 				+ "........\n"
-				+ "B";
-		return  output;
+				+ "B");
 	}
 
 }

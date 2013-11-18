@@ -6,12 +6,18 @@ import org.junit.Test;
 
 public class TestReversi {
 		
-		//@Before
 		private Reversi reversi;
-
+		private String input = "";
+		private String output ="";
+	
+		@Before
+		public void initializeReversi(){
+			this.reversi = new Reversi();
+		}
+		
 		@Test
 		public void grilleAuCommencementBParLigne(){
-			String input = ""+
+			input = ""+
 					"........\n"
 					+ "........\n"
 					+ "........\n"
@@ -22,7 +28,7 @@ public class TestReversi {
 					+ "........\n"
 					+ "B";
 			
-			String output = ""+
+			output = ""+
 					"........\n"
 					+ "........\n"
 					+ "........\n"
@@ -35,5 +41,7 @@ public class TestReversi {
 			
 			assertEquals(output,reversi.printLegalMoves(input));
 		}
+		
+
 
 }
